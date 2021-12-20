@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookshell</title>
+  </head>
+  <body>
+    <h1>All my books:</h1>
+    <ul>
+      <% for(let book of allBooks){ %>
+      <a style="text-decoration: none" href="/books/<%= book._id %> ">
+        <li style="color: <%= book.isToRead ? "darkgreen" : "darkred" %> ">
+          " <%= book.title %>" - <%= book.author %>
+        </li>
+      </a>
+      <% } %>
+    </ul>
+    <a href="/books/new">Add new book!</a>
+  </body>
+</html>

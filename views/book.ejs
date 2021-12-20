@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= book.title %></title>
+  </head>
+  <body>
+    <h1><%= book.title %></h1>
+    <h2>Written by <%= book.author %></h2>
+    <h3>Category: <%= book.category %></h3>
+    <% if (book.isToRead) { %>
+    <p span style="color: darkgreen">This book it to read.</p>
+    <% } else {%>
+    <p span style="color: darkred">You have read this book.</p>
+    <% } %>
+    <p>
+      <a style="background-color: darkgreen; color: white; text-decoration: none;" href="<%= book.id %>/edit">edit</a>
+      <a style="background-color: red; color: white; text-decoration: none;" href="<%= book.id %>/delete">delete</a>
+    </p>
+    <p><a href="/books">back</a></p>
+  </body>
+</html>
