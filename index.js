@@ -78,6 +78,12 @@ app.put("/books/:id", async (req, res) => {
   res.redirect(`/books/${editedBook.id}`);
 });
 
+app.delete("/books/:id/delete", async (req, res) => {
+  const { id } = req.params;
+  const deletedBook = await Book.findByIdAndDelete(id);
+  res.redirect("/books")
+})
+
 app.listen(3000, () => {
   console.log("listening port 3000...");
 });

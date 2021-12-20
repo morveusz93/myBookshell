@@ -17,8 +17,10 @@
     <% } %>
     <p>
       <a style="background-color: darkgreen; color: white; text-decoration: none;" href="<%= book.id %>/edit">edit</a>
-      <a style="background-color: red; color: white; text-decoration: none;" href="<%= book.id %>/delete">delete</a>
     </p>
+    <form method="POST" action="/books/<%= book.id %>/delete?_method=DELETE">
+      <button style="background-color: red; color: white;">Delete</button>
+    </form>
     <p><a href="/books">back</a></p>
   </body>
 </html>
